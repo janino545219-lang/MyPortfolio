@@ -28,7 +28,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== GLOBAL ANIMATIONS ===== */
+
 .fade-up {
   opacity: 0;
   transform: translateY(20px);
@@ -40,7 +40,7 @@ body {
   transform: translateY(0);
 }
 
-/* ===== NAVBAR ===== */
+
 .navbar {
   background: rgba(2, 6, 23, 0.85) !important;
   backdrop-filter: blur(12px);
@@ -78,7 +78,7 @@ body {
   width: 100%;
 }
 
-/* ===== HERO ===== */
+
 #home {
   background: linear-gradient(135deg, #020617, #1e293b);
   min-height: 100vh;
@@ -125,7 +125,7 @@ body {
   100% { opacity: 1; }
 }
 
-/* ===== SECTION HEADINGS ===== */
+
 section h2 {
   position: relative;
   display: inline-block;
@@ -145,7 +145,7 @@ section h2::after {
   transition: width 0.4s;
 }
 
-/* ===== ABOUT ===== */
+
 #about img {
   border-radius: 20px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -156,7 +156,7 @@ section h2::after {
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-/* ===== SKILLS ===== */
+
 .skill-card {
   background: var(--glass);
   backdrop-filter: blur(10px);
@@ -184,7 +184,7 @@ section h2::after {
   color: var(--secondary);
 }
 
-/* ===== PROJECTS ===== */
+
 .card {
   border: none;
   border-radius: 16px;
@@ -208,7 +208,7 @@ section h2::after {
   transform: scale(1.1);
 }
 
-/* ===== CONTACT ===== */
+
 #contact i {
   color: var(--primary);
   margin-right: 8px;
@@ -219,7 +219,7 @@ section h2::after {
   transform: rotate(15deg) scale(1.2);
 }
 
-/* ===== FOOTER ===== */
+
 footer {
   background: var(--dark);
   color: var(--light);
