@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JERIMIE | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Font Awesome (for skill icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Optional hover for education cards */
+    #education .card {
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    #education .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Scroll animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navMenu" data-bs-offset="70" tabindex="0">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">JERIMIE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="container-fluid vh-100 d-flex flex-column justify-content-center align-items-center text-white text-center mb-5"
+       style="
+         background: linear-gradient(135deg, rgba(2,6,23,0.8), rgba(30,41,59,0.8)), 
+                     url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80');
+         background-size: cover;
+         background-position: center;
+         background-blend-mode: overlay;
+       ">
+    <h1 class="display-4 fw-bold fade-up">Hi, I'm JERIMIE</h1>
+    <p class="lead fade-up" style="transition-delay: 0.2s;">IT Student • Beginner Web Developer</p>
+    <a href="#projects" class="btn btn-light btn-lg mt-3 fade-up" style="transition-delay: 0.4s;">View Projects</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-5">
+  <div class="container fade-up">
+    <div class="row align-items-center">
+      <div class="col-lg-5 mb-4">
+        <img src="https://scontent.fdvo3-1.fna.fbcdn.net/v/t39.30808-6/481700756_2009000746241090_6698602404461074552_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEnJEgFAQnFlFhcArAsbFuaZj66aWGeui9mPrppYZ66L8croZ20WKXwmZORzr1rqnWgRPe69NQaMXOhqrCqagX3&_nc_ohc=rUu1wOfAqKsQ7kNvwHcXoQp&_nc_oc=Adl6BM3jPpqCLedXKorsKh_Juz7YrqU0m7A4b-JxUuM-R61pI_Ez11sum12AP5e9x6o&_nc_zt=23&_nc_ht=scontent.fdvo3-1.fna&_nc_gid=sy8ytZPIQ4bgOdC-Xe2OEQ&oh=00_AfoJ0eR4DjBBhQWiWGKu4ogORlCXJ3AYLHqAwqlXJrlaDQ&oe=6980F8C9" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-lg-7">
+        <h2 class="fw-bold">About Me</h2>
+        <p class="text-muted">
+          I’m an IT student learning web development using HTML, CSS, Bootstrap, and JavaScript. I enjoy building clean, responsive, and user-friendly websites while sharpening my skills through hands-on projects.
+        </p>
+        <a href="biography.html" target="_blank" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="py-5 bg-light fade-up">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5">Education</h2>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow rounded p-3">
+          <i class="bi bi-mortarboard fs-1 mb-3 text-primary"></i>
+          <h5 class="card-title fw-bold">Bachelor of Science in Information Technology</h5>
+          <p class="card-text text-muted">University of Mindanao • 2022 - Present</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow rounded p-3">
+          <i class="bi bi-journal-bookmark fs-1 mb-3 text-success"></i>
+          <h5 class="card-title fw-bold">High School Diploma</h5>
+          <p class="card-text text-muted">Inawayan High School • 2018 - 2022</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-5 bg-light">
+  <div class="container text-center fade-up">
+    <h2 class="fw-bold mb-5">My Hobbies</h2>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-2">
+        <div class="skill-card bg-warning text-white rounded p-3 d-flex flex-column align-items-center">
+          <i class="bi bi-person-fill fs-2 mb-2"></i>
+          <h5>Gymrat</h5>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="skill-card bg-primary text-white rounded p-3 d-flex flex-column align-items-center">
+          <i class="bi bi-code-slash fs-2 mb-2"></i>
+          <h5>Coding</h5>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="skill-card bg-secondary text-white rounded p-3 d-flex flex-column align-items-center">
+          <i class="bi bi-tree fs-2 mb-2"></i>
+          <h5>Nature Trip</h5>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="skill-card bg-success text-white rounded p-3 d-flex flex-column align-items-center">
+          <i class="bi bi-music-note-beamed fs-2 mb-2"></i>
+          <h5>Music Lover</h5>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-5">
+  <div class="container text-center fade-up">
+    <h2 class="fw-bold mb-4">Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="https://picsum.photos/400/250" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Project One</h5>
+            <p class="card-text">Simple responsive website using HTML & CSS.</p>
+            <a href="#" class="btn btn-primary btn-sm">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="https://picsum.photos/401/250" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Project Two</h5>
+            <p class="card-text">Bootstrap landing page with grid system.</p>
+            <a href="#" class="btn btn-primary btn-sm">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="https://picsum.photos/402/250" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Project Three</h5>
+            <p class="card-text">Personal portfolio website.</p>
+            <a href="#" class="btn btn-primary btn-sm">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-dark text-white py-5 fade-up">
+  <div class="container text-center">
+    <h2 class="fw-bold">Contact Me</h2>
+    <p><i class="bi bi-envelope"></i> aninojerimie@gmail.com</p>
+    <p><i class="bi bi-phone"></i> +63 912155278</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-secondary text-white text-center py-3">
+  <p class="mb-0">© 2026 JERIMIE Portfolio</p>
+</footer>
+
+<!-- SCROLL ANIMATION SCRIPT -->
+<script>
+  const faders = document.querySelectorAll('.fade-up');
+  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>
