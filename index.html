@@ -1,231 +1,312 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JERIMIE | Cyberpunk Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JERIMIE | Portfolio</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* Global Styles */
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background-color: #0a0a0f;
-      color: #f0f0f0;
-      scroll-behavior: smooth;
+<style>
+/* ==== VIDEO BACKGROUND ==== */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* Dark overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 50, 0.6); /* dark blue overlay */
+    z-index: 0;
+}
+
+/* ==== GLOBAL STYLES ==== */
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    color: #00f7ff;
+    scroll-behavior: smooth;
+}
+
+/* ==== SIDEBAR ==== */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background: #002147; /* dark blue */
+    border-right: 2px solid #00f7ff;
+    padding-top: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar a {
+    display: block;
+    width: 90%;
+    padding: 12px 10px;
+    color: #00f7ff;
+    text-decoration: none;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.sidebar a:hover {
+    background: #00f7ff;
+    color: #002147;
+    box-shadow: 0 0 15px #00f7ff;
+}
+
+/* ==== MAIN CONTENT ==== */
+main {
+    margin-left: 220px;
+}
+
+/* ==== SECTIONS ==== */
+section {
+    min-height: 100vh;
+    padding: 80px 40px;
+    opacity: 0;
+    transform: translateX(80px);
+    transition: 1s;
+    position: relative;
+    z-index: 1;
+}
+section.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ==== HOME ==== */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#home h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #00f7ff;
+}
+#home p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00f7ff;
+}
+#home .btn {
+    background-color: #00f7ff;
+    color: #002147;
+    border: none;
+    box-shadow: 0 0 15px #00f7ff;
+    transition: 0.3s;
+}
+#home .btn:hover {
+    background-color: #00cfff;
+    box-shadow: 0 0 25px #00cfff;
+}
+
+/* ==== CARDS ==== */
+.card {
+    background: rgba(0, 63, 127, 0.8);
+    border: 1px solid #00f7ff;
+    color: #fff;
+    transition: all 0.3s;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00f7ff, 0 0 40px #00cfff;
+}
+
+/* ==== SKILL CARDS ==== */
+.skill-card {
+    background: rgba(0, 63, 127, 0.8);
+    color: #00f7ff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #00f7ff;
+    transition: all 0.3s;
+}
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #00f7ff;
+}
+
+/* ==== HEADINGS ==== */
+h2 {
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff;
+    margin-bottom: 30px;
+}
+
+/* ==== CONTACT ==== */
+#contact {
+    text-align: center;
+}
+
+/* ==== RESPONSIVE ==== */
+@media(max-width:768px){
+    main { margin-left: 0; }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
     }
-    a { color: #00fff7; text-decoration: none; }
-    a:hover { color: #0c81b8; text-decoration: none; }
-
-    /* Navbar */
-    .navbar {
-      background-color: #0a0a0f !important;
-      border-bottom: 2px solid #0550c0;
+    .sidebar a {
+        margin: 5px;
     }
-    .navbar-brand { color: #00fff7 !important; text-shadow: 0 0 8px #00fff7; }
-    .nav-link { color: #f0f0f0 !important; transition: 0.3s; }
-    .nav-link:hover { color: #0745b8 !important; text-shadow: 0 0 8px #ff00ff; }
-
-    /* Hero Section */
-    #home {
-      background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(15,0,30,0.8)),
-                  url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1950&q=80');
-      background-size: cover;
-      background-position: center;
-      background-blend-mode: overlay;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-    }
-    #home h1 { font-size: 3.5rem; color: #c7d2df; text-shadow: 0 0 15px #14bbd1, 0 0 30px #00fff7; }
-    #home p { font-size: 1.5rem; color: #00fff7; text-shadow: 0 0 8px #00fff7; }
-    #home .btn { background-color: #00ffff; color: #fff; border: none; box-shadow: 0 0 15px #00eeff; transition: 0.3s; }
-    #home .btn:hover { background-color: #00fff7; box-shadow: 0 0 25px #00fff7; }
-
-    /* Sections */
-    section { padding: 80px 0; }
-    h2.fw-bold { color: #00ccff; text-shadow: 0 0 10px #00ccff; margin-bottom: 40px; }
-
-    /* Cards */
-    .card { background-color: #11111f; border: 1px solid #00e1ff; color: #f0f0f0; transition: all 0.3s ease; }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 0 20px #00fff7, 0 0 40px #03d2da; }
-
-    /* Skill Cards */
-    .skill-card { background-color: #1f1f3f; color: #00fff7; box-shadow: 0 0 10px #00fff7; transition: all 0.3s; }
-    .skill-card:hover { transform: translateY(-5px); box-shadow: 0 0 20px #0479e6, 0 0 40px #00fff7; color: #00e1ff; }
-
-    /* Contact Section */
-    #contact { background-color: #11111f; color: #00fff7; text-shadow: 0 0 8px #00fff7; }
-
-    /* Footer */
-    footer { background-color: #1f1f3f; color: #0646a7; text-shadow: 0 0 8px #054da0; }
-
-    /* Fade Up Animation */
-    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-    .fade-up.show { opacity: 1; transform: translateY(0); }
-  </style>
+}
+</style>
 </head>
+<body>
 
-<body data-bs-spy="scroll" data-bs-target="#navMenu" data-bs-offset="70" tabindex="0">
+<!-- VIDEO BACKGROUND -->
+<video autoplay muted loop id="bg-video">
+    <source src="your-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-dark fixed-top shadow">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">JERIMIE</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</div>
 
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<main>
+    <!-- HOME -->
+    <section id="home">
+        <h1>Hi, I'm JERIMIE</h1>
+        <p>IT Student • Beginner Developer</p>
+        <a href="#projects" class="btn btn-lg">View Projects</a>
+    </section>
 
-<!-- Home Section -->
-<section id="home">
-  <h1 class="fade-up">Hi, I'm JERIMIE</h1>
-  <p class="fade-up" style="transition-delay: 0.2s;">IT Student • Beginner Web Developer</p>
-  <a href="#projects" class="btn btn-lg mt-3 fade-up" style="transition-delay: 0.4s;">View Projects</a>
-</section>
-
-<!-- About Section -->
-<section id="about">
-  <div class="container fade-up">
-    <div class="row align-items-center">
-      <div class="col-lg-5 mb-4">
-        <img src="me.png" class="img-fluid rounded shadow">
-      </div>
-      <div class="col-lg-7">
-        <h2 class="fw-bold">About Me</h2>
-        <p>I’m an IT student learning web development using HTML, CSS, Bootstrap, and JavaScript. I enjoy building clean, responsive websites while sharpening my skills through hands-on projects.</p>
-        <a href="https://biograp.netlify.app/" target="_blank" class="btn btn-primary">Read More</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Education Section -->
-<section id="education">
-  <div class="container text-center fade-up">
-    <h2 class="fw-bold">Education</h2>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4">
-        <div class="card h-100 shadow rounded p-3">
-          <i class="bi bi-mortarboard fs-1 mb-3 text-primary"></i>
-          <h5 class="card-title fw-bold">Bachelor of Science in Information Technology</h5>
-          <p class="card-text">University of Mindanao • 2022 - Present</p>
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <img src="me.png" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-7">
+                    <h2>About Me</h2>
+                    <p>I’m learning web development and building modern websites with a dark blue theme and video background.</p>
+                    <a href="https://biograp.netlify.app/" target="_blank" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow rounded p-3">
-          <i class="bi bi-journal-bookmark fs-1 mb-3 text-success"></i>
-          <h5 class="card-title fw-bold">High School Diploma</h5>
-          <p class="card-text">Inawayan High School • 2018 - 2022</p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <div class="container text-center">
+            <h2>Education</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h5>BSIT</h5>
+                        <p>University of Mindanao</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h5>High School</h5>
+                        <p>Inawayan High</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Skills Section -->
-<section id="skills">
-  <div class="container text-center fade-up">
-    <h2 class="fw-bold">My Hobbies</h2>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-2"><div class="skill-card rounded p-3"><i class="bi bi-person-fill fs-2 mb-2"></i><h5>Gymrat</h5></div></div>
-      <div class="col-md-2"><div class="skill-card rounded p-3"><i class="bi bi-code-slash fs-2 mb-2"></i><h5>Coding</h5></div></div>
-      <div class="col-md-2"><div class="skill-card rounded p-3"><i class="bi bi-tree fs-2 mb-2"></i><h5>Nature Trip</h5></div></div>
-      <div class="col-md-2"><div class="skill-card rounded p-3"><i class="bi bi-music-note-beamed fs-2 mb-2"></i><h5>Music</h5></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Projects Section -->
-<section id="projects">
-  <div class="container text-center fade-up">
-    <h2 class="fw-bold">Projects</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="https://picsum.photos/400/250" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Project One</h5>
-            <p class="card-text">Simple responsive website using HTML & CSS.</p>
-            <a href="#" class="btn btn-primary btn-sm">View</a>
-          </div>
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container text-center">
+            <h2>My Hobbies</h2>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-2"><div class="skill-card">Gym</div></div>
+                <div class="col-md-2"><div class="skill-card">Coding</div></div>
+                <div class="col-md-2"><div class="skill-card">Nature</div></div>
+                <div class="col-md-2"><div class="skill-card">Music</div></div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="https://picsum.photos/401/250" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Project Two</h5>
-            <p class="card-text">Bootstrap landing page with grid system.</p>
-            <a href="#" class="btn btn-primary btn-sm">View</a>
-          </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="container text-center">
+            <h2>Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/400/250" class="card-img-top">
+                        <div class="card-body">Portfolio</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/401/250" class="card-img-top">
+                        <div class="card-body">Landing Page</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/402/250" class="card-img-top">
+                        <div class="card-body">System App</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="https://picsum.photos/402/250" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Project Three</h5>
-            <p class="card-text">Personal portfolio website.</p>
-            <a href="#" class="btn btn-primary btn-sm">View</a>
-          </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container text-center">
+            <h2>Contact</h2>
+            <p>Email: aninojerimie@gmail.com</p>
+            <p>Phone: 09121955278</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Contact Section -->
-<section id="contact">
-  <div class="container text-center fade-up">
-    <h2 class="fw-bold">Contact Me</h2>
-    <p><i class="bi bi-envelope"></i> aninojerimie@gmail.com</p>
-    <p><i class="bi bi-phone"></i> +63 9121955278</p>
-  </div>
-</section>
+</main>
 
-<!-- Footer -->
-<footer class="text-center py-3">
-  <p class="mb-0">© 2026 JERIMIE Portfolio</p>
-</footer>
-
-<!-- Scroll Fade Animation -->
+<!-- ANIMATION SCRIPT -->
 <script>
-  const faders = document.querySelectorAll('.fade-up');
-  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+const sections = document.querySelectorAll("section");
+const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
     });
-  }, appearOptions);
-  faders.forEach(fader => appearOnScroll.observe(fader));
+},{threshold: 0.2});
+sections.forEach(sec => observer.observe(sec));
 </script>
 
 </body>
