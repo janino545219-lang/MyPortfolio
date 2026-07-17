@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { SelectedWorks } from './components/SelectedWorks';
 import { Journal } from './components/Journal';
+import { Certifications } from './components/Certifications';
 import { Explorations } from './components/Explorations';
 import { Stats } from './components/Stats';
 import { Footer } from './components/Footer';
@@ -21,6 +22,7 @@ function App() {
           <Hero />
           <SelectedWorks />
           <Journal />
+          <Certifications />
           <Explorations />
           <Stats />
           <Footer />

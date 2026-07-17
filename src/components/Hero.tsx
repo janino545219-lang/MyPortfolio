@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 import gsap from 'gsap';
 
-const roles = ["Developer", "Student", "Creator", "Designer"];
+const roles = ["Developer", "Creator", "Designer"];
 
 export const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -70,7 +70,7 @@ export const Hero = () => {
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
         <p className="blur-in text-xs text-muted uppercase tracking-[0.3em] mb-8">
-          BSIT STUDENT • UNIVERSITY OF MINDANAO
+          UNIVERSITY OF MINDANAO
         </p>
 
         <h1 className="name-reveal text-6xl md:text-8xl lg:text-9xl font-display italic leading-[0.9] tracking-tight text-text-primary mb-6">

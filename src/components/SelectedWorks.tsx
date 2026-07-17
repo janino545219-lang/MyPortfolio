@@ -6,25 +6,22 @@ const projects = [
     title: "Hotel Management",
     category: "System Dashboard",
     span: "md:col-span-7",
-    image: "/system_app_dashboard.png"
+    image: "/system_app_dashboard.png",
+    link: "https://it9-hotelmanagement.onrender.com"
   },
   {
-    title: "CRUD App",
-    category: "Foundational",
+    title: "Repair Service",
+    category: "Full-Stack App",
     span: "md:col-span-5",
-    image: "/modern_landing_page.png"
+    image: "/repair_service.png",
+    link: "https://repairservice.onrender.com/"
   },
   {
-    title: "Library System",
-    category: "Modern UI/UX",
-    span: "md:col-span-5",
-    image: "/portfolio_mockup.png" // using placeholder
-  },
-  {
-    title: "IT20 Architecture",
-    category: "Complex Logic",
-    span: "md:col-span-7",
-    image: "/portfolio_mockup.png"
+    title: "Tugma",
+    category: "Creative Platform",
+    span: "md:col-span-12",
+    image: "/tugma.png",
+    link: "https://tugma.vercel.app/"
   }
 ];
 
@@ -67,9 +64,12 @@ export const SelectedWorks = () => {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
           {projects.map((project, i) => (
-            <div 
-              key={i} 
-              className={`group relative overflow-hidden bg-surface border border-stroke rounded-3xl aspect-[4/3] md:aspect-auto md:min-h-[400px] ${project.span}`}
+            <a 
+              key={i}
+              href={project.link}
+              target={project.link !== "#" ? "_blank" : undefined}
+              rel={project.link !== "#" ? "noopener noreferrer" : undefined}
+              className={`group relative overflow-hidden bg-surface border border-stroke rounded-3xl aspect-[4/3] md:aspect-auto md:min-h-[400px] cursor-pointer block ${project.span}`}
             >
               {/* Background Image */}
               <img 
@@ -99,7 +99,7 @@ export const SelectedWorks = () => {
                 </div>
                 <p className="text-white/70 text-sm tracking-wider uppercase">{project.category}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
         

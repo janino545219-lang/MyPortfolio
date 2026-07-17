@@ -35,7 +35,7 @@ export const Navbar = () => {
 
         {/* Nav Links */}
         <div className="flex items-center gap-0.5">
-          {(["Home", "Work", "Resume"] as const).map((item, i) => (
+          {(["Home", "Work", "Certifications"] as const).map((item, i) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
