@@ -3,7 +3,7 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { SelectedWorks } from './components/SelectedWorks';
-import { Journal } from './components/Journal';
+
 import { Certifications } from './components/Certifications';
 import { Explorations } from './components/Explorations';
 import { Stats } from './components/Stats';
@@ -21,7 +21,7 @@ function App() {
           <Navbar />
           <Hero />
           <SelectedWorks />
-          <Journal />
+
           <Certifications />
           <Explorations />
           <Stats />
