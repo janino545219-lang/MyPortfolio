@@ -6,7 +6,7 @@ const projects = [
     title: "Hotel Management",
     category: "System Dashboard",
     span: "md:col-span-7",
-    image: "/system_app_dashboard.png",
+    image: "/hotel_management.png",
     link: "https://it9-hotelmanagement.onrender.com"
   },
   {
