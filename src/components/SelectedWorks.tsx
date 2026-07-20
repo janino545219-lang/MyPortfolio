@@ -17,11 +17,11 @@ const projects = [
     link: "https://cozypaws-blush.vercel.app/"
   },
   {
-    title: "Tugma",
-    category: "Creative Platform",
+    title: "Dental Health",
+    category: "Healthcare Platform",
     span: "md:col-span-12",
-    image: "/tugma.png",
-    link: "https://tugma.vercel.app/"
+    image: "/dental_health.png",
+    link: "https://health-portal-coral.vercel.app/"
   }
 ];
 
