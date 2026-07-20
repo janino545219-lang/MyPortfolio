@@ -10,11 +10,11 @@ const projects = [
     link: "https://it9-hotelmanagement.onrender.com"
   },
   {
-    title: "Repair Service",
-    category: "Full-Stack App",
+    title: "CozyPaws",
+    category: "Pet Care & E-Commerce",
     span: "md:col-span-5",
-    image: "/repair_service.png",
-    link: "https://repairservice.onrender.com/"
+    image: "/cozypaws.png",
+    link: "https://cozypaws-blush.vercel.app/"
   },
   {
     title: "Tugma",
