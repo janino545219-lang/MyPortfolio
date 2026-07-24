@@ -3,9 +3,16 @@ import { ArrowRight } from 'lucide-react';
 
 const projects = [
   {
+    title: "AURA Coffee",
+    category: "Luxury Coffee Experience",
+    span: "md:col-span-7",
+    image: "/aura_coffee.png",
+    link: "https://coffewebsite-rouge.vercel.app/"
+  },
+  {
     title: "Hotel Management",
     category: "System Dashboard",
-    span: "md:col-span-7",
+    span: "md:col-span-5",
     image: "/hotel_management.png",
     link: "https://it9-hotelmanagement.onrender.com"
   },
@@ -19,7 +26,7 @@ const projects = [
   {
     title: "Dental Health",
     category: "Healthcare Platform",
-    span: "md:col-span-12",
+    span: "md:col-span-7",
     image: "/dental_health.png",
     link: "https://health-portal-coral.vercel.app/"
   }
